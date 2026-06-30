@@ -1,0 +1,128 @@
+<!--
+    contact.html - Contact page
+    Arjun Kirtikar | i360 Final Project
+
+    Fonts: Google Fonts (Righteous, Inter, JetBrains Mono)
+           https://fonts.google.com/
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Arjun Kirtikar</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════
+         NAVIGATION
+         ═══════════════════════════════════════════ -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">&lt;<span>AK</span> /&gt;</a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="resume.html">Resume</a>
+                <a href="contact.html" class="active">Contact</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ═══════════════════════════════════════════
+             PAGE HEADER
+             ═══════════════════════════════════════════ -->
+        <header class="page-header">
+            <div class="container">
+                <h1>Get in <span class="rainbow-text">Touch</span></h1>
+                <p>Open to new opportunities, collaborations, and conversations about code.</p>
+            </div>
+        </header>
+
+        <!-- ═══════════════════════════════════════════
+             CONTACT SECTION
+             ═══════════════════════════════════════════ -->
+        <section class="section section-tint-orange no-top">
+            <div class="container">
+
+                <h2 class="section-title">Let's <span class="purple-gradient-text">Connect</span></h2>
+                <div class="divider rainbow-bar"></div>
+
+                <div class="contact-info">
+                    <h3>Reach out directly</h3>
+                    <p>
+                        I'm graduating in May 2026 and actively looking for full-time software development
+                        roles. Whether it's a job opportunity, a freelance project, or just a conversation,
+                        feel free to reach out through any of the channels below.
+                    </p>
+
+                    <div class="contact-links">
+                        <a href="mailto:arjunkirtikar@icloud.com">
+                            - arjunkirtikar@icloud.com
+                        </a>
+                        <a href="mailto:arkirt@iu.edu">
+                            - arkirt@iu.edu
+                        </a>
+                        <a href="tel:6307792269">
+                            - (630) 779-2269
+                        </a>
+                        <a href="https://github.com/arjunkirtikar" target="_blank">
+                            - github.com/arjunkirtikar
+                        </a>
+                        <a href="https://linkedin.com/in/arjun-kirtikar" target="_blank">
+                            - linkedin.com/in/arjun-kirtikar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════ -->
+    <footer>
+        <div class="container">
+            <span class="footer-copy">Arjun Kirtikar</span>
+            <div class="footer-socials">
+                <a href="https://github.com/arjunkirtikar" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/arjun-kirtikar" target="_blank">LinkedIn</a>
+                <a href="mailto:arjunkirtikar@icloud.com">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var hamburger = document.getElementById('hamburger');
+        var navLinks = document.getElementById('navLinks');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', function (e) {
+                e.stopPropagation();
+                navLinks.classList.toggle('open');
+            });
+            document.addEventListener('click', function (e) {
+                if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+                    navLinks.classList.remove('open');
+                }
+            });
+            var links = navLinks.querySelectorAll('a');
+            for (var i = 0; i < links.length; i++) {
+                links[i].addEventListener('click', function () {
+                    navLinks.classList.remove('open');
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>

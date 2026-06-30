@@ -1,0 +1,210 @@
+<!--
+    about.html - About page
+
+    Fonts: Google Fonts (Righteous, Inter, JetBrains Mono)
+           https://fonts.google.com/
+
+    Photo: Personal photo
+
+    Interest icons - Icons8 (icons8.com), downloaded as PNG
+      icon-tennis.png       https://icons8.com/icons/set/tennis
+      icon-code.png         https://icons8.com/icons/set/code
+      icon-robot.png        https://icons8.com/icons/set/robot
+      icon-book.png         https://icons8.com/icon/42763/book
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Arjun Kirtikar</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════
+         NAVIGATION
+         ═══════════════════════════════════════════ -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">&lt;<span>AK</span> /&gt;</a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="resume.html">Resume</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ═══════════════════════════════════════════
+             PAGE HEADER
+             ═══════════════════════════════════════════ -->
+        <header class="page-header">
+            <div class="container">
+                <h1>About <span class="rainbow-text">Me</span></h1>
+                <p>Developer, builder, and Computer Science student at Indiana University.</p>
+            </div>
+        </header>
+
+        <!-- ═══════════════════════════════════════════
+             BIO SECTION
+             ═══════════════════════════════════════════ -->
+        <section class="section section-tint-purple no-top">
+            <div class="container">
+
+                <h2 class="section-title">My <span class="purple-gradient-text">Background</span></h2>
+                <div class="divider rainbow-bar"></div>
+
+                <div class="about-content">
+
+                    <!-- Profile photo -->
+                    <div>
+                        <img src="images/IMG_0390.png" alt="Arjun Kirtikar" class="photo-circle">
+                    </div>
+
+                    <div class="about-text">
+                        <h3>Hi, I'm Arjun</h3>
+                        <p>
+                            I'm a Computer Science student at the Luddy School of Informatics, Computing, and Engineering
+                            at Indiana University Bloomington, graduating in May 2026. My experience spans
+                            full-stack web development, Salesforce platform engineering, and AI-assisted workflows.
+                        </p>
+                        <p>
+                            I've had the opportunity to intern at both MCIL as a Salesforce Developer and at ARG Consulting
+                            working with Beam Suntory, where I built production-level features, automated workflows for
+                            30+ engineers, and delivered measurable improvements in efficiency and user experience.
+                        </p>
+                        <p>
+                            Outside of coding, I've spent years as a pro tennis coach, instructing 80+ students across all
+                            skill levels and age groups. That experience sharpened my communication skills and taught me
+                            how to break down complex ideas into something anyone can understand.
+                        </p>
+
+                        <div class="about-details">
+                            <span>School</span>
+                            <strong>Indiana University Bloomington</strong>
+                            <span>Degree</span>
+                            <strong>B.S. Computer Science</strong>
+                            <span>Graduating</span>
+                            <strong>May 2026</strong>
+                            <span>Location</span>
+                            <strong>Bloomington, IN</strong>
+                            <span>Email</span>
+                            <strong><a href="mailto:arjunkirtikar@icloud.com">arjunkirtikar@icloud.com</a></strong>
+                            <span>Phone</span>
+                            <strong>(630) 779-2269</strong>
+                        </div>
+
+                        <a href="contact.html" class="btn-primary">Get in Touch</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             WHAT I'M INTO
+             ═══════════════════════════════════════════ -->
+        <section class="section section-tint-blue no-top">
+            <div class="container">
+
+                <p class="section-label">// Beyond the Code</p>
+                <h2 class="section-title">What I'm Into</h2>
+                <div class="divider rainbow-bar"></div>
+
+                <div class="interests-grid">
+
+                    <!-- Tennis -->
+                    <article class="interest-card">
+                        <div class="interest-icon">
+                            <img src="images/icon-tennis.png" alt="Tennis ball icon" class="interest-img icon-yellow">
+                        </div>
+                        <h3>Tennis</h3>
+                        <p>Competed and coached for 10+ years. Instructed 80+ students ranging from age 7 to 80 and developed 30+ personalized training plans.</p>
+                    </article>
+
+                    <!-- Building Things -->
+                    <article class="interest-card">
+                        <div class="interest-icon">
+                            <img src="images/icon-code.png" alt="Code brackets icon" class="interest-img icon-blue">
+                        </div>
+                        <h3>Building Things</h3>
+                        <p>Whether it's a full-stack web app or a Salesforce automation, I enjoy taking a problem and engineering a clean, working solution.</p>
+                    </article>
+
+                    <!-- AI & Automation -->
+                    <article class="interest-card">
+                        <div class="interest-icon">
+                            <img src="images/icon-robot.png" alt="Robot icon" class="interest-img icon-purple">
+                        </div>
+                        <h3>AI &amp; Automation</h3>
+                        <p>Exploring how AI tools can cut research time and improve developer productivity without replacing thoughtful engineering.</p>
+                        <div class="ai-tools">
+                            <span class="tag blue">Microsoft Copilot</span>
+                            <span class="tag violet">Perplexity AI</span>
+                            <span class="tag purple">Claude</span>
+                        </div>
+                    </article>
+
+                    <!-- Learning -->
+                    <article class="interest-card">
+                        <div class="interest-icon">
+                            <img src="images/icon-book.png" alt="Book reader icon" class="interest-img icon-red">
+                        </div>
+                        <h3>Continuous Learning</h3>
+                        <p>Currently diving deeper into Salesforce platform development, cloud architecture, and backend system design through coursework and personal projects.</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════ -->
+    <footer>
+        <div class="container">
+            <span class="footer-copy">Arjun Kirtikar</span>
+            <div class="footer-socials">
+                <a href="https://github.com/arjunkirtikar" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/arjun-kirtikar" target="_blank">LinkedIn</a>
+                <a href="mailto:arjunkirtikar@icloud.com">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var hamburger = document.getElementById('hamburger');
+        var navLinks = document.getElementById('navLinks');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', function (e) {
+                e.stopPropagation();
+                navLinks.classList.toggle('open');
+            });
+            document.addEventListener('click', function (e) {
+                if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+                    navLinks.classList.remove('open');
+                }
+            });
+            var links = navLinks.querySelectorAll('a');
+            for (var i = 0; i < links.length; i++) {
+                links[i].addEventListener('click', function () {
+                    navLinks.classList.remove('open');
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>

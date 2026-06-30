@@ -1,0 +1,270 @@
+<!--
+    index.html - Home page
+
+    Fonts: Google Fonts (Righteous, Inter, JetBrains Mono)
+           https://fonts.google.com/
+
+    Photo: My Personal Photo
+
+    Stats bar - flex layout with responsive wrap,
+    based on class examples of flexbox containers.
+
+    Rainbow gradient text - CSS background-clip technique
+    https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arjun Kirtikar - Software Developer</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════
+         NAVIGATION
+         ═══════════════════════════════════════════ -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">&lt;<span>AK</span> /&gt;</a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="resume.html">Resume</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+
+    <!-- ═══════════════════════════════════════════
+         HERO
+         ═══════════════════════════════════════════ -->
+    <section class="hero">
+        <div class="hero-content">
+
+            <!-- Glow -->
+            <div class="avatar-wrap">
+                <div>
+                    <img src="images/IMG_0390.png" alt="Arjun Kirtikar" class="photo-circle" width="220" height="220">
+                </div>
+            </div>
+
+            <p class="hero-greeting">// Hello, I'm</p>
+            <h1 class="hero-name rainbow-text">Arjun Kirtikar</h1>
+            <p class="hero-role">Software Developer &amp; Salesforce Engineer</p>
+            <p class="hero-tagline">
+                Indiana University Bloomington | B.S. Computer Science | May 2026
+            </p>
+            <div class="hero-buttons">
+                <a href="projects.html" class="btn-primary">View Projects</a>
+                <a href="resume.html" class="btn-secondary">My Resume</a>
+            </div>
+            <p class="hero-contact">
+                <a href="mailto:arjunkirtikar@icloud.com">arjunkirtikar@icloud.com</a>
+                |
+                <a href="tel:6307792269">(630) 779-2269</a>
+            </p>
+
+            <!-- Stats bar -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-number red">400+</div>
+                    <div class="stat-label">Training Hours</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number orange">3</div>
+                    <div class="stat-label">Client Orgs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number yellow">50+</div>
+                    <div class="stat-label">Custom Fields</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number green">80%+</div>
+                    <div class="stat-label">Test Coverage</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number blue">30+</div>
+                    <div class="stat-label">Engineers Helped</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number violet">80+</div>
+                    <div class="stat-label">Students Coached</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         FEATURED PROJECTS
+         ═══════════════════════════════════════════ -->
+    <section class="section section-tint-purple pt-sm" id="featured">
+        <div class="container">
+            <p class="section-label">// Featured Work</p>
+            <h2 class="section-title">Recent Projects</h2>
+            <p class="section-subtitle">A selection of things I've built recently.</p>
+
+            <div class="projects-grid">
+
+                <!-- Appointment Scheduler -->
+                <div class="grad-border">
+                    <div class="grad-border-inner">
+                        <article>
+                        <a href="https://appointment-scheduler-mo6h.onrender.com" target="_blank" class="project-card">
+                            <div class="card-image natural"><img src="images/Calendar_Image.png"
+                                    alt="Appointment Scheduler"></div>
+                            <div class="card-body">
+                                <h3>Appointment Scheduler</h3>
+                                <p>Full-stack web app with 3 user roles, bulk appointment creation, and Docker-deployed
+                                    CI/CD pipeline with 80%+ test coverage.</p>
+                                <div class="card-links">
+                                    <a href="https://github.com/arjunkirtikar/Appointment-Scheduler"
+                                        target="_blank">GitHub ↗</a>
+                                    <a href="https://appointment-scheduler-mo6h.onrender.com" target="_blank">Live Demo
+                                        ↗</a>
+                                </div>
+                                <div class="tags">
+                                    <span class="tag red">Java</span>
+                                    <span class="tag green">Spring Boot</span>
+                                    <span class="tag blue">SQLite</span>
+                                    <span class="tag orange">Docker</span>
+                                </div>
+                            </div>
+                        </a>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Salesforce -->
+                <div class="grad-border-teal">
+                    <div class="grad-border-inner">
+                        <article>
+                        <a href="projects.html" class="project-card">
+                            <div class="card-image"><img src="images/Salesforce_Image.png"
+                                    alt="Salesforce Education Org">
+                            </div>
+                            <div class="card-body">
+                                <h3>Salesforce Education Org</h3>
+                                <p>Custom objects for teachers, students, and classes with flows, approval processes,
+                                    and dashboards to track student performance.</p>
+                                <div class="tags">
+                                    <span class="tag purple">Salesforce</span>
+                                    <span class="tag violet">Apex</span>
+                                    <span class="tag blue">Flows</span>
+                                </div>
+                            </div>
+                        </a>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Apex -->
+                <div class="grad-border-orange">
+                    <div class="grad-border-inner">
+                        <article>
+                        <a href="projects.html" class="project-card">
+                            <div class="card-image natural"><img src="images/Apex_Image.png"
+                                    alt="Apex Feature Portfolio"></div>
+                            <div class="card-body">
+                                <h3>Apex Feature Portfolio</h3>
+                                <p>Bulk-safe Apex triggers, HTTP/SOAP callouts with retry logic, and unit test factories
+                                    achieving high code coverage before deployment.</p>
+                                <div class="tags">
+                                    <span class="tag purple">Salesforce</span>
+                                    <span class="tag violet">Apex</span>
+                                    <span class="tag green">SFDX</span>
+                                </div>
+                            </div>
+                        </a>
+                        </article>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         SKILLS
+         ═══════════════════════════════════════════ -->
+    <section class="section section-tint-blue no-top">
+        <div class="container">
+            <p class="section-label">// Tech Stack</p>
+            <h2 class="section-title">Skills &amp; Tools</h2>
+            <div class="divider rainbow-bar"></div>
+
+            <div class="skills-grid">
+                <span class="skill-pill java">Java</span>
+                <span class="skill-pill python">Python</span>
+                <span class="skill-pill python">Swift</span>
+                <span class="skill-pill js">JavaScript</span>
+                <span class="skill-pill web">HTML &amp; CSS</span>
+                <span class="skill-pill java">PHP</span>
+                <span class="skill-pill sf">Salesforce / Apex</span>
+                <span class="skill-pill sf">Visualforce</span>
+                <span class="skill-pill sf">SFDX</span>
+                <span class="skill-pill sf">Triggers &amp; Flows</span>
+                <span class="skill-pill web">Spring Boot</span>
+                <span class="skill-pill web">REST APIs</span>
+                <span class="skill-pill tool">Docker</span>
+                <span class="skill-pill tool">Git</span>
+                <span class="skill-pill tool">SQLite / SQL</span>
+                <span class="skill-pill ai">Microsoft Copilot</span>
+                <span class="skill-pill ai">Perplexity AI</span>
+            </div>
+        </div>
+    </section>
+
+
+    </main>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════ -->
+    <footer>
+        <div class="container">
+            <span class="footer-copy">Arjun Kirtikar</span>
+            <div class="footer-socials">
+                <a href="https://github.com/arjunkirtikar" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/arjun-kirtikar" target="_blank">LinkedIn</a>
+                <a href="mailto:arjunkirtikar@icloud.com">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var hamburger = document.getElementById('hamburger');
+        var navLinks = document.getElementById('navLinks');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', function (e) {
+                e.stopPropagation();
+                navLinks.classList.toggle('open');
+            });
+            document.addEventListener('click', function (e) {
+                if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+                    navLinks.classList.remove('open');
+                }
+            });
+            var links = navLinks.querySelectorAll('a');
+            for (var i = 0; i < links.length; i++) {
+                links[i].addEventListener('click', function () {
+                    navLinks.classList.remove('open');
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>

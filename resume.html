@@ -1,0 +1,216 @@
+<!--
+    resume.html - Resume page
+
+    Fonts: Google Fonts (Righteous, Inter, JetBrains Mono)
+           https://fonts.google.com/
+
+    Resume PDF: Arjun_Kirtikar_Resume.pdf 
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Arjun Kirtikar</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════
+         NAVIGATION
+         ═══════════════════════════════════════════ -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">&lt;<span>AK</span> /&gt;</a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="resume.html" class="active">Resume</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ═══════════════════════════════════════════
+             PAGE HEADER
+             ═══════════════════════════════════════════ -->
+        <header class="page-header">
+            <div class="container">
+                <h1>My <span class="rainbow-text">Resume</span></h1>
+                <p>My experience, education, and technical skills.</p>
+                <div class="resume-download">
+                    <a href="Arjun_Kirtikar_Resume.pdf" download class="btn-secondary">Download PDF</a>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- ═══════════════════════════════════════════
+             EDUCATION
+             ═══════════════════════════════════════════ -->
+        <section class="section section-tint-purple no-top">
+            <div class="container">
+                <p class="section-label">// Education</p>
+                <h2 class="section-title">Where I've Studied</h2>
+                <div class="divider rainbow-bar"></div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-date">Aug 2022 – May 2026</span>
+                        <h3 class="timeline-role">B.S. in Computer Science</h3>
+                        <p class="timeline-company">Indiana University Bloomington — Luddy School of Informatics, Computing, and Engineering</p>
+                        <ul class="timeline-bullets">
+                            <li>Advanced coursework and team-based projects focused on software engineering and Salesforce platform development</li>
+                            <li>Utilized Apex, triggers, Visualforce, and SFDX within VS Code to engineer scalable system features</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════
+             EXPERIENCE
+             ═══════════════════════════════════════════ -->
+        <section class="section section-tint-blue no-top">
+            <div class="container">
+                <p class="section-label">// Experience</p>
+                <h2 class="section-title">Where I've Worked</h2>
+                <div class="divider rainbow-bar"></div>
+
+                <div class="timeline">
+
+                    <!-- MCIL -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-date">May 2025 – Dec 2025</span>
+                        <h3 class="timeline-role">Salesforce Intern</h3>
+                        <p class="timeline-company">MCIL</p>
+                        <ul class="timeline-bullets">
+                            <li>Completed 400+ hours of full-time Salesforce developer training covering Apex, triggers, Visualforce, and SFDX — achieving 100% test coverage on delivered features</li>
+                            <li>Configured 20+ custom objects, 50+ fields, and 15+ workflow automations for 3 client organizations, improving user experience by 40%</li>
+                            <li>Applied best practices for governor limits, list operations, and integration patterns (HTTP/SOAP)</li>
+                            <li>Leveraged Microsoft Copilot and Perplexity AI to reduce research time for new features by ~30%</li>
+                        </ul>
+                    </div>
+
+                    <!-- Beam Suntory -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-date">May 2023 – Aug 2024</span>
+                        <h3 class="timeline-role">Development Intern — Client: Beam Suntory</h3>
+                        <p class="timeline-company">ARG Consulting</p>
+                        <ul class="timeline-bullets">
+                            <li>Designed and deployed a full-stack website with server-side scripting and database integration</li>
+                            <li>Developed cache-clearing automation used by 30+ engineers, decreasing average workstation downtime by 20%</li>
+                            <li>Used AI to draft SQL/ORM query patterns and REST endpoint handlers, then optimized each component to meet performance and security requirements</li>
+                            <li>Applied AI-assisted code review to identify edge cases, logging gaps, and error-handling improvements</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tennis -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-date">May 2016 – Aug 2023</span>
+                        <h3 class="timeline-role">Pro Tennis Coach</h3>
+                        <p class="timeline-company">Healthtrack Sports and Wellness Center</p>
+                        <ul class="timeline-bullets">
+                            <li>Instructed 80+ students (ages 7–80) in private and group lessons, achieving a 25% improvement in average client performance scores after 8 weeks</li>
+                            <li>Developed 30+ personalized training plans that accelerated skill acquisition beyond academy averages</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════
+             SKILLS
+             ═══════════════════════════════════════════ -->
+        <section class="section section-tint-green no-top">
+            <div class="container">
+                <p class="section-label">// Technical Skills</p>
+                <h2 class="section-title">Tools &amp; Technologies</h2>
+                <div class="divider rainbow-bar"></div>
+
+                <div class="skills-grid">
+                    <span class="skill-pill java">Java</span>
+                    <span class="skill-pill python">Python</span>
+                    <span class="skill-pill python">Swift</span>
+                    <span class="skill-pill js">JavaScript</span>
+                    <span class="skill-pill web">HTML &amp; CSS</span>
+                    <span class="skill-pill java">PHP</span>
+                    <span class="skill-pill sf">Salesforce / Apex</span>
+                    <span class="skill-pill sf">Triggers</span>
+                    <span class="skill-pill sf">Visualforce</span>
+                    <span class="skill-pill sf">SFDX (VS Code)</span>
+                    <span class="skill-pill sf">Admin Config</span>
+                    <span class="skill-pill sf">Governor Limits</span>
+                    <span class="skill-pill sf">HTTP/SOAP</span>
+                    <span class="skill-pill web">Spring Boot</span>
+                    <span class="skill-pill web">RESTful APIs</span>
+                    <span class="skill-pill web">Server-Side Scripting</span>
+                    <span class="skill-pill tool">Docker</span>
+                    <span class="skill-pill tool">Git / GitHub</span>
+                    <span class="skill-pill tool">SQLite / SQL</span>
+                    <span class="skill-pill tool">macOS / Windows</span>
+                    <span class="skill-pill tool">Xcode</span>
+                    <span class="skill-pill tool">Adobe XD</span>
+                    <span class="skill-pill ai">Microsoft Copilot</span>
+                    <span class="skill-pill ai">Perplexity AI</span>
+                    <span class="skill-pill ai">Claude</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════ -->
+    <footer>
+        <div class="container">
+            <span class="footer-copy">Arjun Kirtikar</span>
+            <div class="footer-socials">
+                <a href="https://github.com/arjunkirtikar" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/arjun-kirtikar" target="_blank">LinkedIn</a>
+                <a href="mailto:arjunkirtikar@icloud.com">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var hamburger = document.getElementById('hamburger');
+        var navLinks = document.getElementById('navLinks');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', function (e) {
+                e.stopPropagation();
+                navLinks.classList.toggle('open');
+            });
+            document.addEventListener('click', function (e) {
+                if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+                    navLinks.classList.remove('open');
+                }
+            });
+            var links = navLinks.querySelectorAll('a');
+            for (var i = 0; i < links.length; i++) {
+                links[i].addEventListener('click', function () {
+                    navLinks.classList.remove('open');
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>

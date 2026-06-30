@@ -1,0 +1,1237 @@
+/*
+    styles.css
+    Google Fonts - Righteous, Inter, JetBrains Mono
+    Source: https://fonts.google.com/
+    Used for: display headings (Righteous), body text (Inter),
+              code/mono labels (JetBrains Mono)
+*/
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* I followed this video so that I could use variables more effieciently 
+   and it has been working well */
+/* https://www.youtube.com/watch?v=PHO6TBq_auI */
+
+:root {
+    /* Surfaces */
+    --bg-primary: #07050f;
+    --bg-secondary: #0e0b1a;
+    --bg-tertiary: #160f2a;
+    --bg-elevated: #1c1535;
+    --bg-glass: rgba(18, 10, 35, 0.85);
+
+    /* Text */
+    --text-primary: #f0eaff;
+    --text-secondary: #b39ddb;
+    --text-tertiary: #7c6a9e;
+
+    /* Purple accent */
+    --purple: #a855f7;
+    --purple-bright: #c084fc;
+    --purple-subtle: rgba(168, 85, 247, 0.15);
+    --purple-glow: rgba(168, 85, 247, 0.40);
+
+    /* Rainbow spectrum */
+    --rainbow-red: #ff4d6d;
+    --rainbow-orange: #ff8c42;
+    --rainbow-yellow: #ffd166;
+    --rainbow-green: #06d6a0;
+    --rainbow-blue: #4cc9f0;
+    --rainbow-violet: #c77dff;
+
+    /* Subtle tints */
+    --red-subtle: rgba(255, 77, 109, 0.15);
+    --orange-subtle: rgba(255, 140, 66, 0.15);
+    --yellow-subtle: rgba(255, 209, 102, 0.15);
+    --green-subtle: rgba(6, 214, 160, 0.15);
+    --blue-subtle: rgba(76, 201, 240, 0.15);
+    --violet-subtle: rgba(199, 125, 255, 0.15);
+
+    /* Borders */
+    --border: rgba(168, 85, 247, 0.15);
+    --border-hover: rgba(168, 85, 247, 0.40);
+
+    /* Layout */
+    --max-width: 1200px;
+    --nav-height: 64px;
+    --section-spacing: 110px;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Used a radial gradient to make the background more responsive 
+   also used it to make it a bit more glossy */
+/* https://www.youtube.com/watch?v=IbUHqvu_-lI */
+
+html {
+    scroll-behavior: smooth;
+    min-height: 100%;
+    background-color: var(--bg-primary);
+    background-image:
+        radial-gradient(ellipse 80% 60% at 0% 0%, rgba(99, 32, 235, 0.55) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 55% at 100% 0%, rgba(30, 100, 255, 0.45) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 50% at 50% 25%, rgba(168, 40, 255, 0.30) 0%, transparent 50%),
+        radial-gradient(ellipse 65% 50% at 0% 100%, rgba(20, 60, 220, 0.40) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 55% at 100% 100%, rgba(120, 0, 255, 0.45) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 50% 75%, rgba(50, 130, 255, 0.30) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 30% at 80% 50%, rgba(180, 60, 255, 0.25) 0%, transparent 45%);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: transparent;
+    min-height: 100%;
+}
+
+a {
+    color: var(--purple-bright);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+
+/* ═══════════════════════════════════════════
+   RAINBOW 
+   ═══════════════════════════════════════════ */
+
+/* Watched this to make the gradients look cleaner. 
+   Then I watched another video (which is linked in
+   the section below) to learn how to use webkits
+   to make it look more transparent
+https://www.youtube.com/watch?v=4kWHW7da4U8 */
+
+.rainbow-text {
+    background: linear-gradient(90deg,
+            var(--rainbow-red),
+            var(--rainbow-orange),
+            var(--rainbow-yellow),
+            var(--rainbow-green),
+            var(--rainbow-blue),
+            var(--rainbow-violet));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.purple-gradient-text {
+    background: linear-gradient(135deg, var(--purple-bright), var(--rainbow-violet));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.rainbow-bar {
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg,
+            var(--rainbow-red),
+            var(--rainbow-orange),
+            var(--rainbow-yellow),
+            var(--rainbow-green),
+            var(--rainbow-blue),
+            var(--rainbow-violet));
+}
+
+h1,
+h2,
+h3,
+.logo,
+.timeline-role,
+.stat-number {
+    font-family: 'Righteous', cursive;
+}
+
+.section-label,
+.hero-greeting,
+.hero-tagline,
+.timeline-date {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+
+/* ═══════════════════════════════════════════
+   GRADIENT BORDER 
+   ═══════════════════════════════════════════ */
+
+/* I don't remeber if we covered gradients in class but either way
+ I decided to watch this video and use the gradient on the borders of the projects */
+ /* https://www.youtube.com/watch?v=4kWHW7da4U8 */
+
+
+.grad-border {
+    border-radius: 18px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--purple), var(--rainbow-blue), var(--rainbow-green));
+}
+
+.grad-border-orange {
+    border-radius: 18px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--rainbow-orange), var(--rainbow-yellow), var(--rainbow-red));
+}
+
+.grad-border-teal {
+    border-radius: 18px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--rainbow-green), var(--rainbow-blue), var(--rainbow-violet));
+}
+
+.grad-border-inner {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+}
+
+
+/* ═══════════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════════ */
+
+/* Learned the blur affect for the background here */
+        /* https://www.youtube.com/watch?v=wiIbol5tZaI */
+
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--nav-height);
+    z-index: 1000;
+    background: var(--bg-glass);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--border);
+}
+
+nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.logo {
+    font-family: 'Righteous', cursive;
+    font-size: 20px;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--purple-bright);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--text-primary);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+}
+
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 2px;
+}
+
+
+/* ═══════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════ */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--nav-height) 24px 40px;
+    background: transparent;
+}
+
+.hero-content {
+    max-width: 780px;
+}
+
+.hero-greeting {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--purple-bright);
+    margin-bottom: 16px;
+}
+
+/* Used this (clamp) for the adjusting the sizes of fonts & images 
+just makes it easier for me to adjist all my fonts*/
+/* https://www.youtube.com/watch?v=U9VF-4euyRo */
+
+.hero-name {
+    font-size: clamp(46px, 8vw, 84px);
+    letter-spacing: 2px;
+    line-height: 1.05;
+    margin-bottom: 16px;
+}
+
+.hero-role {
+    font-size: clamp(17px, 2.5vw, 21px);
+    font-weight: 300;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.hero-tagline {
+    font-size: 13px;
+    color: var(--text-tertiary);
+    margin-bottom: 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+}
+
+.hero-contact {
+    font-size: 13px;
+    color: var(--text-tertiary);
+}
+
+.hero-contact a {
+    color: var(--text-secondary);
+}
+
+.hero-contact a:hover {
+    color: var(--purple-bright);
+}
+
+
+/* ═══════════════════════════════════════════
+   GLOW
+   ═══════════════════════════════════════════ */
+
+/* I watched this video and he did a lot 
+ more but I decided to not go all the way with his process */
+ /* https://www.youtube.com/watch?v=JCYo0r67koM */
+
+.avatar-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+/* Profile photo*/
+.photo-circle {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    margin: 0 auto 24px;
+    display: block;
+    border: 3px solid var(--purple);
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
+}
+
+/* ═══════════════════════════════════════════
+   STATS BAR
+   ═══════════════════════════════════════════ */
+
+.stats-bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 48px auto 0;
+    max-width: 860px;
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.stat-item {
+    flex: 1;
+    min-width: 130px;
+    padding: 24px 16px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+}
+
+.stat-item:last-child {
+    border-right: none;
+}
+
+.stat-number {
+    font-family: 'Righteous', cursive;
+    font-size: 30px;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.stat-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+}
+
+.stat-number.red {
+    color: var(--rainbow-red);
+}
+
+.stat-number.orange {
+    color: var(--rainbow-orange);
+}
+
+.stat-number.yellow {
+    color: var(--rainbow-yellow);
+}
+
+.stat-number.green {
+    color: var(--rainbow-green);
+}
+
+.stat-number.blue {
+    color: var(--rainbow-blue);
+}
+
+.stat-number.violet {
+    color: var(--rainbow-violet);
+}
+
+
+/* ═══════════════════════════════════════════
+   BUTTONS
+   ═══════════════════════════════════════════ */
+
+.btn-primary,
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    border-radius: 100px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+}
+
+.btn-primary {
+    background: var(--purple);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--purple-bright);
+    color: #fff;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-hover);
+}
+
+.btn-secondary:hover {
+    background: var(--bg-elevated);
+    border-color: var(--purple-bright);
+}
+
+
+/* ═══════════════════════════════════════════
+   UTILITIES
+   ═══════════════════════════════════════════ */
+
+.section.no-top {
+    padding-top: 0;
+}
+
+.section.pt-sm {
+    padding-top: 48px;
+}
+
+
+/* ═══════════════════════════════════════════
+   TINTED BACKGROUND
+   ═══════════════════════════════════════════ */
+
+/* Learned how to do tinting on a background, used 4 colors to get a mix
+ on the background, turned out prety well */
+/* https://www.youtube.com/watch?v=IbUHqvu_-lI */
+
+.section {
+    padding: var(--section-spacing) 0;
+}
+
+.section-tint-purple {
+    background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(168, 40, 255, 0.10) 0%, transparent 70%);
+}
+
+.section-tint-blue {
+    background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(50, 130, 255, 0.10) 0%, transparent 70%);
+}
+
+.section-tint-green {
+    background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(120, 0, 255, 0.10) 0%, transparent 70%);
+}
+
+.section-tint-orange {
+    background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(99, 32, 235, 0.10) 0%, transparent 70%);
+}
+
+.section-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--purple-bright);
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.section-title {
+    font-size: clamp(28px, 4vw, 42px);
+    letter-spacing: 1px;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: var(--text-secondary);
+    text-align: center;
+    max-width: 580px;
+    margin: 0 auto 48px;
+    line-height: 1.6;
+}
+
+.divider {
+    width: 60px;
+    margin: 0 auto 48px;
+}
+
+
+/* ═══════════════════════════════════════════
+   PROJECT CARDS
+   ═══════════════════════════════════════════ */
+
+/* Used min and max for the project grid cards */
+/* https://www.youtube.com/watch?v=U9VF-4euyRo */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+#featured .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#featured .projects-grid > :last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 50%;
+}
+
+.project-card {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    display: block;
+    color: inherit;
+}
+
+.project-card:hover {
+    border-color: var(--border-hover);
+    color: inherit;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.card-image {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-tertiary);
+}
+
+.card-image.natural {
+    height: 155px;
+    background: #ffffff;
+    padding: 12px;
+}
+
+.card-image.natural img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+    margin: 0 auto;
+}
+
+.card-body {
+    padding: 20px 24px 24px;
+}
+
+.card-body h3 {
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.card-body p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 14px;
+}
+
+.card-links {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.card-links a {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--purple-bright);
+}
+
+.card-links a:hover {
+    color: #fff;
+}
+
+.tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 100px;
+}
+
+.tag.purple {
+    background: var(--purple-subtle);
+    color: var(--purple-bright);
+}
+
+.tag.blue {
+    background: var(--blue-subtle);
+    color: var(--rainbow-blue);
+}
+
+.tag.green {
+    background: var(--green-subtle);
+    color: var(--rainbow-green);
+}
+
+.tag.orange {
+    background: var(--orange-subtle);
+    color: var(--rainbow-orange);
+}
+
+.tag.yellow {
+    background: var(--yellow-subtle);
+    color: var(--rainbow-yellow);
+}
+
+.tag.red {
+    background: var(--red-subtle);
+    color: var(--rainbow-red);
+}
+
+.tag.violet {
+    background: var(--violet-subtle);
+    color: var(--rainbow-violet);
+}
+
+
+/* ═══════════════════════════════════════════
+   ABOUT SECTION
+   ═══════════════════════════════════════════ */
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.about-text h3 {
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+}
+
+.about-text p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 14px;
+}
+
+.about-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 24px;
+    margin: 20px 0 24px;
+    padding: 20px;
+    background: var(--bg-tertiary);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.about-details span {
+    font-size: 13px;
+    color: var(--text-tertiary);
+}
+
+.about-details strong {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+
+/* ═══════════════════════════════════════════
+   SKILLS
+   ═══════════════════════════════════════════ */
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill-pill {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 18px;
+    border-radius: 100px;
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+}
+
+.skill-pill:hover {
+    border-color: var(--purple);
+    color: var(--purple-bright);
+    background: var(--purple-subtle);
+}
+
+.skill-pill.java {
+    border-color: rgba(255, 77, 109, 0.3);
+    color: var(--rainbow-red);
+}
+
+.skill-pill.python,
+.skill-pill.js {
+    border-color: rgba(255, 209, 102, 0.3);
+    color: var(--rainbow-yellow);
+}
+
+.skill-pill.web {
+    border-color: rgba(76, 201, 240, 0.3);
+    color: var(--rainbow-blue);
+}
+
+.skill-pill.sf {
+    border-color: rgba(168, 85, 247, 0.3);
+    color: var(--rainbow-violet);
+}
+
+.skill-pill.tool {
+    border-color: rgba(6, 214, 160, 0.3);
+    color: var(--rainbow-green);
+}
+
+.skill-pill.ai {
+    border-color: rgba(255, 140, 66, 0.3);
+    color: var(--rainbow-orange);
+}
+
+
+/* ═══════════════════════════════════════════
+   RESUME
+   ═══════════════════════════════════════════ */
+
+.timeline {
+    max-width: 680px;
+    margin: 0 auto;
+    border-left: 2px solid var(--border);
+}
+
+.timeline-item {
+    padding-left: 36px;
+    padding-bottom: 44px;
+    position: relative;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -7px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 2px solid var(--purple);
+}
+
+.timeline-date {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--purple-bright);
+    margin-bottom: 6px;
+}
+
+.timeline-role {
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.timeline-company {
+    font-size: 16px;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.timeline-bullets {
+    margin-top: 8px;
+    padding-left: 16px;
+}
+
+.timeline-bullets li {
+    list-style: disc;
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 6px;
+}
+
+
+/* ═══════════════════════════════════════════
+   CONTACT
+   ═══════════════════════════════════════════ */
+
+.contact-info {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.contact-info h3 {
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.contact-info p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-links a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--text-secondary);
+}
+
+.contact-links a:hover {
+    color: var(--purple-bright);
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+
+footer {
+    padding: 40px 0;
+    border-top: 1px solid var(--border);
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-copy {
+    font-size: 13px;
+    color: var(--text-tertiary);
+}
+
+.footer-socials {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-socials a {
+    font-size: 13px;
+    color: var(--text-tertiary);
+}
+
+.footer-socials a:hover {
+    color: var(--purple-bright);
+}
+
+
+/* ═══════════════════════════════════════════
+   RESUME DOWNLOAD
+   ═══════════════════════════════════════════ */
+
+.resume-download {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+
+/* ═══════════════════════════════════════════
+   INTERESTS (about page)
+   ═══════════════════════════════════════════ */
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 48px;
+}
+
+.interest-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+}
+
+.interest-card:hover {
+    border-color: var(--border-hover);
+}
+
+.interest-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.interest-img {
+    width: 44px;
+    height: 44px;
+}
+
+/* Learned the hugh from Kevin Powell for the icons in the About page */
+/* https://www.youtube.com/watch?v=qyUz1iF8E6Y */
+.interest-img.icon-yellow {
+    filter: brightness(0) saturate(100%) invert(87%) sepia(100%) saturate(500%) hue-rotate(10deg) brightness(105%);
+}
+
+.interest-img.icon-blue {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(100%) saturate(400%) hue-rotate(175deg) brightness(110%);
+}
+
+.interest-img.icon-purple {
+    filter: brightness(0) saturate(100%) invert(65%) sepia(100%) saturate(400%) hue-rotate(250deg) brightness(110%);
+}
+
+.interest-img.icon-red {
+    filter: brightness(0) saturate(100%) invert(35%) sepia(100%) saturate(1000%) hue-rotate(320deg) brightness(110%);
+}
+
+.ai-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.interest-card h3 {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.interest-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+
+/* ═══════════════════════════════════════════
+   FILTER BAR
+   ═══════════════════════════════════════════ */
+
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border-radius: 100px;
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    border-color: var(--purple);
+    color: var(--text-primary);
+}
+
+.filter-btn.active {
+    background: var(--purple);
+    color: #fff;
+    border-color: var(--purple);
+}
+
+
+/* ═══════════════════════════════════════════
+   PAGE HEADER
+   ═══════════════════════════════════════════ */
+
+.page-header {
+    padding-top: 124px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+/* Used this (clamp) for the adjusting the sizes of fonts & images 
+just makes it easier for me to adjist all my fonts*/
+/* https://www.youtube.com/watch?v=U9VF-4euyRo */
+
+.page-header h1 {
+    font-size: clamp(36px, 5vw, 56px);
+    letter-spacing: 1.5px;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.page-header p {
+    font-size: 17px;
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+    :root {
+        --section-spacing: 80px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0;
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        bottom: auto;
+        background: rgba(10, 5, 25, 0.97);
+        /* Learned the blur affect for the background here */
+        /* https://www.youtube.com/watch?v=wiIbol5tZaI */
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        border-bottom: 1px solid var(--border);
+        padding: 8px 0;
+        transform: translateY(-110%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+        width: 100%;
+        padding: 14px 24px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .stats-bar {
+        flex-direction: column;
+    }
+
+    .stat-item {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .stat-item:last-child {
+        border-bottom: none;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+
+    .about-details {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #featured .projects-grid > :last-child {
+        grid-column: auto;
+        justify-self: auto;
+        width: auto;
+    }
+
+    footer .container {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+        max-width: 280px;
+    }
+}

@@ -1,0 +1,246 @@
+<!--
+    projects.html - Projects page
+
+    Fonts: Google Fonts (Righteous, Inter, JetBrains Mono)
+           https://fonts.google.com/
+
+    Project images:
+      Calendar_Image.png  - https://www.istockphoto.com/photo/isolated-black-calendar-symbol-for-time-management-gm2226984351-642888312?searchscope=image%2Cfilm
+      Salesforce_Image.png - Salesforce logo (Salesforce.com, used for
+                             educational/portfolio reference)
+      Apex_Image.png      - Apex logo (Salesforce.com, used for
+                             educational/portfolio reference)
+      Beam_Suntory.png    - Beam Suntory logo (Beam Suntory Inc., used
+                             for educational/portfolio reference)
+
+    Filter button JavaScript - https://www.youtube.com/watch?v=DfUHpQIjVsg 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Arjun Kirtikar</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+         NAVIGATION
+         ═══════════════════════════════════════════ -->
+  <nav>
+    <div class="container">
+      <a href="index.html" class="logo">&lt;<span>AK</span> /&gt;</a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════
+             PAGE HEADER
+             ═══════════════════════════════════════════ -->
+    <header class="page-header">
+      <div class="container">
+        <h1>My <span class="rainbow-text">Projects</span></h1>
+        <p>Things I've built, from full-stack apps to Salesforce platforms.</p>
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════
+             PROJECT GRID
+             ═══════════════════════════════════════════ -->
+    <section class="section section-tint-blue no-top">
+      <div class="container">
+
+        <h2 class="section-title">All <span class="purple-gradient-text">Work</span></h2>
+        <div class="divider rainbow-bar"></div>
+
+        <div class="filter-bar" role="group" aria-label="Filter projects by category">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web">Web &amp; Full-Stack</button>
+          <button class="filter-btn" data-filter="sf">Salesforce</button>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Appointment Scheduler -->
+          <div class="grad-border" data-category="web">
+            <div class="grad-border-inner">
+              <article>
+                <a href="https://appointment-scheduler-mo6h.onrender.com" target="_blank" class="project-card">
+                  <div class="card-image natural"><img src="images/Calendar_Image.png"
+                      alt="Appointment Scheduler app screenshot"></div>
+                  <div class="card-body">
+                    <h3>Appointment Scheduler</h3>
+                    <p>Full-stack web app using Spring Boot, Spring Security, Thymeleaf, and SQLite with 3 distinct user
+                      roles and clean MVC architecture. Supports bulk creation of 50+ appointments, 3 recurring schedule
+                      frequencies, and 5+ business rule validations. Deployed via Docker to Render.com with a GitHub
+                      CI/CD
+                      pipeline.</p>
+                    <div class="card-links">
+                      <a href="https://github.com/arjunkirtikar/Appointment-Scheduler" target="_blank">GitHub ↗</a>
+                      <a href="https://appointment-scheduler-mo6h.onrender.com" target="_blank">Live Demo ↗</a>
+                    </div>
+                    <div class="tags">
+                      <span class="tag red">Java</span>
+                      <span class="tag green">Spring Boot</span>
+                      <span class="tag blue">SQLite</span>
+                      <span class="tag orange">Docker</span>
+                      <span class="tag yellow">JUnit 5</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            </div>
+          </div>
+
+          <!-- Salesforce Education Org -->
+          <div class="grad-border-teal" data-category="sf">
+            <div class="grad-border-inner">
+              <article>
+                <a href="#" class="project-card">
+                  <div class="card-image"><img src="images/Salesforce_Image.png" alt="Salesforce logo"></div>
+                  <div class="card-body">
+                    <h3>Salesforce Education Org</h3>
+                    <p>Modeled custom objects for teachers, students, and classes with lookup and master-detail
+                      relationships. Built flows and approval processes to automate enrollment, grade updates, and
+                      communications. Designed reports and dashboards to provide stakeholders with actionable metrics.
+                    </p>
+                    <div class="tags">
+                      <span class="tag purple">Salesforce</span>
+                      <span class="tag violet">Apex</span>
+                      <span class="tag blue">Flows</span>
+                      <span class="tag green">Dashboards</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            </div>
+          </div>
+
+          <!-- Apex Feature Portfolio -->
+          <div class="grad-border" data-category="sf">
+            <div class="grad-border-inner">
+              <article>
+                <a href="#" class="project-card">
+                  <div class="card-image natural"><img src="images/Apex_Image.png" alt="Apex logo"></div>
+                  <div class="card-body">
+                    <h3>Apex Feature Portfolio</h3>
+                    <p>Bulk-safe Apex triggers using list operations to handle large-volume data updates without
+                      exceeding
+                      governor limits. External service integration via HTTP/SOAP callouts with authentication, retry
+                      logic,
+                      and error handling. Unit tests with realistic data factories achieving high code coverage.</p>
+                    <div class="tags">
+                      <span class="tag purple">Salesforce</span>
+                      <span class="tag violet">Apex</span>
+                      <span class="tag green">SFDX</span>
+                      <span class="tag orange">HTTP/SOAP</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            </div>
+          </div>
+
+          <!-- Beam Suntory Full-Stack Site -->
+          <div class="grad-border-orange" data-category="web">
+            <div class="grad-border-inner">
+              <article>
+                <a href="#" class="project-card">
+                  <div class="card-image"><img src="images/Beam_Suntory.png" alt="Beam Suntory logo"></div>
+                  <div class="card-body">
+                    <h3>Beam Suntory - Full-Stack Site</h3>
+                    <p>Designed and deployed a full-stack website with server-side scripting and database integration
+                      for
+                      Beam Suntory via ARG Consulting. Developed cache-clearing automation used by 30+ engineers,
+                      decreasing
+                      average workstation downtime by 20%.</p>
+                    <div class="tags">
+                      <span class="tag blue">Full-Stack</span>
+                      <span class="tag yellow">PHP</span>
+                      <span class="tag green">SQL</span>
+                      <span class="tag orange">REST</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <span class="footer-copy">Arjun Kirtikar</span>
+      <div class="footer-socials">
+        <a href="https://github.com/arjunkirtikar" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/arjun-kirtikar" target="_blank">LinkedIn</a>
+        <a href="mailto:arjunkirtikar@icloud.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var filterBtns = document.querySelectorAll('.filter-btn');
+    var projectCards = document.querySelectorAll('.projects-grid > [data-category]');
+
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        filterBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        var filter = btn.getAttribute('data-filter');
+        projectCards.forEach(function (card) {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    /* Hamburger menu */
+    var hamburger = document.getElementById('hamburger');
+    var navLinks = document.getElementById('navLinks');
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', function (e) {
+        e.stopPropagation();
+        navLinks.classList.toggle('open');
+      });
+      document.addEventListener('click', function (e) {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+          navLinks.classList.remove('open');
+        }
+      });
+      var links = navLinks.querySelectorAll('a');
+      for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function () {
+          navLinks.classList.remove('open');
+        });
+      }
+    }
+  </script>
+</body>
+
+</html>
